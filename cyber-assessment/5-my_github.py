@@ -5,21 +5,16 @@ import requests
 username = sys.argv[1]
 password = sys.argv[2]
 
-#First
 headers = {
     'Authorization': f'Bearer {password}',
-    'X-GitHub-Api-Version': '2022-11-28',
-}
-
-response = requests.get('https://api.github.com/octocat', headers=headers)
-
-print(response)
-
-headers = {
     'Accept': 'application/vnd.github+json',
     'X-GitHub-Api-Version': '2022-11-28',
 }
+try:
+    user_info = requests.get('https://api.github.com/user', headers=headers).json()
 
-user_info = requests.get('https://api.github.com/user', headers=headers)
+    user_id = user_info["id"]
 
-print(user_info)
+    print(user_id)
+except:
+    print(None)
