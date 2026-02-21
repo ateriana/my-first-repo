@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-import urllib
+import urllib.request
 import sys
 
-#url = input("Enter url: ")
-urllib.request.urlopen("https://httpbin.org/response-headers?X-Request-Id=hello_world")
+url = sys.argv[1]
+
+with urllib.request.urlopen(url) as response:
+    print(response.getheader('X-Request-Id'))
