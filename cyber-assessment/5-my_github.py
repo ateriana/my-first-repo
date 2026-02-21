@@ -5,5 +5,11 @@ import requests
 username = sys.argv[1]
 password = sys.argv[2]
 
-data = requests.get(f"https://api.github.com/user/{username}")
-print(data)
+headers = {
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+}
+
+response = requests.get('https://api.github.com/user', headers=headers)
+
+print(response)
