@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-for num in range(100):
-    if num < 99:
+for num in range(99):
         print(f"{str(num).zfill(2)}", end=', ')
-    else: 
-        print(f"{str(num)}\n")
+print(f"{str(99)}\n")
