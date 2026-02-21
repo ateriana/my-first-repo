@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Listen on localhost port 98 and echo any received data back to the client.
+# Requires `nc` (netcat) which is available on most Linux/macOS systems.
+
+HOST="127.0.0.1"
+PORT=98
+
+# The -k option keeps the listener alive for multiple connections (optional).
+# The -l flag puts netcat in listen mode, -p specifies the port, and -s binds to the given address.
+nc -lk -s "$HOST" -p "$PORT"
