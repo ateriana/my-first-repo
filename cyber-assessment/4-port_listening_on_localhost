@@ -1,5 +1,2 @@
 #!/usr/bin/env bash
-HOST="127.0.0.1"
-PORT=98
-
-nc -l "$HOST" -p "$PORT"
+nc -l 127.0.0.1 98
